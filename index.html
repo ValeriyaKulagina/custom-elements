@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>База знаний</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css">
+  <link rel="stylesheet" href="css/choices.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="main">
+    <section class="checkbox">
+      <h2 class="checkbox__title">
+        Категории:
+      </h2>
+      <label class="checkbox__item">
+        <input class="checkbox__input visually-hidden" type="checkbox" name="checkbox">
+        <span class="checkbox__icon">Динозавры</span>
+      </label>
+      <label class="checkbox__item">
+        <input class="checkbox__input visually-hidden" type="checkbox" name="checkbox">
+        <span class="checkbox__icon">Медведи</span>
+      </label>
+      <label class="checkbox__item">
+        <input class="checkbox__input visually-hidden" type="checkbox" name="checkbox">
+        <span class="checkbox__icon">Косули</span>
+      </label>
+      <label class="checkbox__item">
+        <input class="checkbox__input visually-hidden" type="checkbox" name="checkbox">
+        <span class="checkbox__icon">Лисы</span>
+      </label>
+      <label class="checkbox__item">
+        <input class="checkbox__input visually-hidden" type="checkbox" name="checkbox">
+        <span class="checkbox__icon">Волки</span>
+      </label>
+      <label class="checkbox__item">
+        <input class="checkbox__input visually-hidden" type="checkbox" name="checkbox">
+        <span class="checkbox__icon">Олени и&nbsp;лоси</span>
+      </label>
+    </section>
+
+    <section class="select">
+      <select class="select__custom--js">
+        <option value="">Материал</option>
+        <option>Древесина</option>
+        <option>Металл</option>
+        <option>Камень</option>
+        <option>Пластик</option>
+        <option>Композитный</option>
+        <option>Гипс</option>
+      </select>
+    </section>
+
+    <section class="map">
+      <div class="map--size" id="map"></div>
+    </section>
+
+    <section class="scroll" data-simplebar>
+      <p class="scroll__text">
+          Сложно сказать, почему многие известные личности представлены в&nbsp;исключительно положительном свете. Лишь активно развивающиеся страны третьего мира будут объективно рассмотрены соответствующими инстанциями. Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что высокотехнологичная концепция общественного уклада представляет собой интересный эксперимент проверки глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно следующее: непосредственные участники технического прогресса освещают чрезвычайно интересные особенности картины в&nbsp;целом, однако конкретные выводы, разумеется, обнародованы. Значимость этих проблем настолько очевидна, что социально-экономическое развитие, а&nbsp;также свежий взгляд на&nbsp;привычные вещи&nbsp;&mdash; безусловно открывает новые горизонты для первоочередных требований.
+      </p>
+    </section>
+
+    <section class="contacts">
+      <form class="contacts__form form">
+        <label class="form__label">
+          <input
+          class="form__input form__input-name"
+          type="text"
+          name="Name"
+          placeholder="Имя*"
+          data-validate-field="name"
+
+          >
+        </label>
+        <label class="form__label">
+          <input
+          class="form__input form__input-tel"
+          type="tel"
+          name="Phone"
+          placeholder="Телефон*"
+          data-validate-field="tel"
+          data-validate-rules="phone"
+          >
+        </label>
+        <label class="form__label">
+          <input
+          class="form__input form__input-mail"
+          type="email"
+          name="Email"
+          placeholder="E-mail*"
+          data-validate-field="mail"
+          >
+        </label>
+        <button class="form__btn">
+          Заказать
+        </button>
+      </form>
+
+    </section>
+  </main>
+
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+  <script src="./js/just-validate.min.js"></script>
+  <script src="dist/bindings/inputmask.binding.js"></script>
+  <script src="./js/choices.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
+
+
