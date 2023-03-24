@@ -6,16 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>База знаний</title>
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css">
-  <link rel="stylesheet" href="css/choices.css">
-  <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css">
+  <link rel="stylesheet" href="css/choices.css">
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <main class="main">
-    <section class="checkbox">
+    <div class="main__block checkbox">
       <h2 class="checkbox__title">
         Категории:
       </h2>
@@ -43,9 +44,9 @@
         <input class="checkbox__input visually-hidden" type="checkbox" name="checkbox">
         <span class="checkbox__icon">Олени и&nbsp;лоси</span>
       </label>
-    </section>
+    </div>
 
-    <section class="select">
+    <div class="main__block select">
       <select class="select__custom--js">
         <option value="">Материал</option>
         <option>Древесина</option>
@@ -55,29 +56,27 @@
         <option>Композитный</option>
         <option>Гипс</option>
       </select>
-    </section>
+    </div>
 
-    <section class="map">
+    <div class="main__block map">
       <div class="map--size" id="map"></div>
-    </section>
+    </div>
 
-    <section class="scroll" data-simplebar>
+    <div class="main__block scroll" data-simplebar>
       <p class="scroll__text">
           Сложно сказать, почему многие известные личности представлены в&nbsp;исключительно положительном свете. Лишь активно развивающиеся страны третьего мира будут объективно рассмотрены соответствующими инстанциями. Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что высокотехнологичная концепция общественного уклада представляет собой интересный эксперимент проверки глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно следующее: непосредственные участники технического прогресса освещают чрезвычайно интересные особенности картины в&nbsp;целом, однако конкретные выводы, разумеется, обнародованы. Значимость этих проблем настолько очевидна, что социально-экономическое развитие, а&nbsp;также свежий взгляд на&nbsp;привычные вещи&nbsp;&mdash; безусловно открывает новые горизонты для первоочередных требований.
       </p>
-    </section>
+    </div>
 
-    <section class="contacts">
-      <form class="contacts__form form">
+    <div class="main__block contacts">
+      <form class="contacts__form form" action="https://jsonplaceholder.typicode.com/posts" method="post">
         <label class="form__label">
           <input
           class="form__input form__input-name"
           type="text"
           name="Name"
           placeholder="Имя*"
-          data-validate-field="name"
-
-          >
+          data-validate-field="name">
         </label>
         <label class="form__label">
           <input
@@ -86,8 +85,7 @@
           name="Phone"
           placeholder="Телефон*"
           data-validate-field="tel"
-          data-validate-rules="phone"
-          >
+          data-validate-rules="phone">
         </label>
         <label class="form__label">
           <input
@@ -95,22 +93,34 @@
           type="email"
           name="Email"
           placeholder="E-mail*"
-          data-validate-field="mail"
-          >
+          data-validate-field="mail">
         </label>
         <button class="form__btn">
           Заказать
         </button>
       </form>
+    </div>
 
-    </section>
+    <div class="main__block tooltip">
+      <p class="tooltip__text">
+        Следует отметить, что социально&nbsp;-&nbsp;экономическое развитие способствует повышению качества переосмысления внешнеэкономических политик.
+        <button class="tooltip__btn js-tooltip-btn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM8 3C7.33333 3 7 3.31919 7 3.95758C7 4.60026 7.33333 4.92159 8 4.92159C8.33333 4.92159 8.58233 4.83805 8.74699 4.67095C8.91566 4.49957 9 4.26178 9 3.95758C9 3.31919 8.66667 3 8 3ZM7.07831 13H8.91566V5.81491H7.07831V13Z" fill="#BCBCBC"/>
+          </svg>
+        </button>
+      </p>
+    </div>
+
   </main>
 
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
   <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-  <script src="./js/just-validate.min.js"></script>
-  <script src="dist/bindings/inputmask.binding.js"></script>
   <script src="./js/choices.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+  <script src="./js/inputmask.min.js"></script>
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
   <script src="./js/script.js"></script>
 </body>
 </html>

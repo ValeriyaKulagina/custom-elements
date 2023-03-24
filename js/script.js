@@ -35,16 +35,12 @@ ymaps.ready(init);
 
 /* contacts */
 
-const phoneElement = document.querySelector(".form__input-tel");
-
-const im = new Inputmask("+7(999) 999-99-99");
+let phoneElement = document.querySelector(".form__input-tel");
+let im = new Inputmask("+7 (999) 999-99-99");
 im.mask(phoneElement);
 
-const validation = new window.JustValidate('.form', {
+let validation = new window.JustValidate('.form', {
   errorFieldCssClass: 'is-invalid',
-  errorFieldStyle: {
-    border: '1px solid #FF5C00',
-  },
   errorLabelCssClass: 'is-label-invalid',
   errorLabelStyle: {
     color: '#FF5C00',
@@ -62,34 +58,45 @@ validation
   },
   {
     rule: 'maxLength',
-    value: 30,
-    errorMessage: 'Имя не может содержать более 30 символов'
+    value: 15,
+    errorMessage: 'Имя не может содержать более 15 символов'
   },
   {
     rule: 'required',
-    errorMessage: 'Как вас зовут?'
-  }
+    errorMessage: 'Вы не ввели имя'
+  },
 ])
 .addField('.form__input-mail', [
   {
     rule: 'required',
-    errorMessage: 'Поле обязательное для заполнения',
+    errorMessage: 'Вы не ввели e-mail',
   },
   {
     rule: 'email',
-    errorMessage: 'Укажите ваш e-mail',
+    errorMessage: 'E-mail введен некорректно',
   },
 ])
 .addField('.form__input-tel', [
   {
     validator: () => {
-      const phone = phoneElement.inputmask.unmaskedvalue();
-      const result = Number(phone) && phone.length === 10;
+      let phone = phoneElement.inputmask.unmaskedvalue();
+      let result = Number(phone) && phone.length === 10;
       return result === 0 ? false : result;
     },
-    errorMessage: 'Укажите ваш телефон',
+    errorMessage: 'Вы не ввели телефон',
   }
 ]);
+validation.onSuccess((event) => {
+  validation.form.submit();
+});
+
+/* tooltip */
+
+tippy('.tooltip__btn', {
+  content: 'Глава 2, страница 176',
+  maxWidth: 165,
+  theme: 'gray',
+});
 
 
 

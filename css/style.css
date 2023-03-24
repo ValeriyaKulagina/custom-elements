@@ -19,9 +19,9 @@ img {
 
 body {
   min-width: 320px;
-  background: #424242;
   font-family: 'Open Sans', sans-serif;
   font-style: normal;
+  background: #424242;
 }
 
 .main {
@@ -29,7 +29,11 @@ body {
   flex-wrap: wrap;
   align-items: flex-start;
   padding: 70px;
+}
 
+.main__block:not(:last-child) {
+  margin-bottom: 58px;
+  margin-right: 58px;
 }
 
 .visually-hidden {
@@ -49,7 +53,6 @@ body {
   display: flex;
   flex-direction: column;
   width: 176px;
-  margin-right: 58px;
   padding: 20px 29px 30px;
   border-radius: 10px;
   background-color: #fff;
@@ -120,17 +123,7 @@ body {
   border-color: #CCB26E;
 }
 
-/* select */
-
-.select {
-  margin-right: 58px;
-}
-
 /* map */
-
-.map {
-  margin-right: 58px;
-}
 
 .map--size {
   width: 460px;
@@ -146,10 +139,9 @@ body {
 .scroll {
   width: 399px;
   height: 310px;
-  margin-right: 58px;
   padding: 20px 30px;
   background-color: #fff;
-  overflow: AUTO;
+  overflow-y: auto;
 }
 
 .scroll__text {
@@ -162,9 +154,9 @@ body {
 }
 
 .simplebar-scrollbar::before {
-  background: #CCB26E;
-  border-radius: 5px;
   width: 6px;
+  border-radius: 5px;
+  background: #CCB26E;
 }
 
 .simplebar-scrollbar.simplebar-visible:before {
@@ -178,9 +170,14 @@ body {
   flex-direction: column;
   padding: 40px 30px;
   width: 440px;
-  background: rgba(0, 0, 0, 0.4);
-  /* opacity: 0.4; */
   border-radius: 10px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.form__label {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .form__input {
@@ -194,30 +191,98 @@ body {
   line-height: 19px;
   color: #999;
   background: #FFFFFF;
-  opacity: 1;
 }
 
 .form__btn {
   align-self: flex-start;
   padding: 18.5px 53px;
   border: none;
-  cursor: pointer;
-  background: #FF5C00;
   border-radius: 10px;
-  opacity: 1;
+  cursor: pointer;
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
   text-align: center;
   color: #FFFFFF;
+  background: #FF5C00;
 }
 
+.form__input.is-invalid {
+  outline: 1px solid #FF5C00;
+}
 
+.form__input:focus {
+  outline: 1px solid #FF5C00;
+}
 
+.is-label-invalid.just-validate-error-label {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  outline: none;
+}
 
+/* tooltip */
 
+.tooltip {
+  width: 375px;
+  padding: 20px 78px 20px 29px;
+  background-color: #fff;
+}
 
+.tooltip__text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+  color: #333
+}
 
+.tooltip__btn {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.tooltip__btn:focus-visible path {
+  fill: #CCB26E;
+}
+
+.tooltip__btn:focus-visible {
+  outline: none;
+}
+
+.tooltip__btn:hover:not(:focus-visible) path {
+  fill: #CCB26E;
+}
+
+.tippy-box[data-theme~='gray'] {
+  padding: 8px 7px;
+  border-radius: 0;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  background-color: #666;
+  color: #FFF
+}
+
+.tippy-box[data-theme~='gray'][data-placement^='top'] > .tippy-arrow::before {
+  border-top-color: #666;
+}
+.tippy-box[data-theme~='gray'][data-placement^='bottom'] > .tippy-arrow::before {
+  border-bottom-color: #666;
+}
+.tippy-box[data-theme~='gray'][data-placement^='left'] > .tippy-arrow::before {
+  border-left-color: #666;
+}
+.tippy-box[data-theme~='gray'][data-placement^='right'] > .tippy-arrow::before {
+  border-right-color: #666;
+}
 
 
 
